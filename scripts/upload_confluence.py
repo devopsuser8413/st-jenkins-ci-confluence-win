@@ -6,7 +6,7 @@ USER = os.environ.get('CONFLUENCE_USER')
 TOKEN = os.environ.get('CONFLUENCE_TOKEN')
 SPACE = os.environ.get('CONFLUENCE_SPACE', 'DEV')
 TITLE = os.environ.get('CONFLUENCE_PAGE_TITLE', 'Automated Test Report')
-HTML_PATH = os.environ.get('HTML_REPORT', 'reports\\report.html')
+HTML_PATH = os.environ.get('HTML_REPORT', 'report\\report.html')
 
 session = requests.Session()
 session.auth = (USER, TOKEN)
