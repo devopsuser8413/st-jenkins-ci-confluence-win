@@ -4,8 +4,8 @@ import requests
 BASE = os.environ.get('CONFLUENCE_BASE')
 USER = os.environ.get('CONFLUENCE_USER')
 TOKEN = os.environ.get('CONFLUENCE_TOKEN')
-SPACE = os.environ.get('CONFLUENCE_SPACE', 'DEV')
-TITLE = os.environ.get('CONFLUENCE_PAGE_TITLE', 'Automated Test Report')
+SPACE = os.environ.get('CONFLUENCE_SPACE')
+TITLE = os.environ.get('CONFLUENCE_TITLE')
 HTML_PATH = os.environ.get('HTML_REPORT', 'report\\report.html')
 
 session = requests.Session()

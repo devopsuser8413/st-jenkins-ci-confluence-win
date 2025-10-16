@@ -7,8 +7,8 @@ SMTP_PORT = int(os.environ.get('SMTP_PORT', '587'))
 SMTP_USER = os.environ.get('SMTP_USER')
 SMTP_PASS = os.environ.get('SMTP_PASS')
 TO_ADDR = os.environ.get('REPORT_TO', SMTP_USER)
-HTML_PATH = os.environ.get('HTML_REPORT', 'reports\\report.html')
-SUBJECT = os.environ.get('EMAIL_SUBJECT', 'Automated Test Report')
+HTML_PATH = os.environ.get('HTML_REPORT', 'report\\report.html')
+SUBJECT = os.environ.get('EMAIL_SUBJECT', 'ST Jenkins CI Test Report')
 
 def send_email():
     msg = EmailMessage()
@@ -21,7 +21,7 @@ def send_email():
     msg.set_content('Please view the HTML report attached.')
     msg.add_alternative(html, subtype='html')
 
-    xml_path = os.environ.get('JUNIT_XML', 'reports\\junit.xml')
+    xml_path = os.environ.get('JUNIT_XML', 'report\\junit.xml')
     if os.path.exists(xml_path):
         with open(xml_path, 'rb') as f:
             xml = f.read()
